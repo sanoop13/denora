@@ -1,13 +1,12 @@
 # ============================================================
 # DENORA CMS CONFIG
-# Before going live, replace YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
-# on the "repo:" line below with your actual GitHub repository.
 # ============================================================
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  repo: sanoop13/denora
   branch: main
+  base_url: https://sveltia-cms-auth.sanoop-devan13.workers.dev
 
 # Where uploaded photos are stored
 media_folder: "assets/uploads"
