@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "name": "The Rosalind Dress",
+      "category": "Clothing",
+      "price": "₹4,800",
+      "description": "Hand-dyed linen in dusty rose, gathered waist, mother-of-pearl buttons.",
+      "image": "",
+      "sold_out": false,
+      "featured": true
+    },
+    {
+      "name": "Julna Pearl Drop",
+      "category": "Jewellery",
+      "price": "₹2,400",
+      "description": "Freshwater pearl on a gold-vermeil chain, hand-knotted.",
+      "image": "",
+      "sold_out": false,
+      "featured": true
+    },
+    {
+      "name": "The Marigold Blouse",
+      "category": "Clothing",
+      "price": "₹3,600",
+      "description": "Hand-embroidered cuffs, cottage-garden floral, cropped fit.",
+      "image": "",
+      "sold_out": false,
+      "featured": true
+    },
+    {
+      "name": "Cottage Rose Ring",
+      "category": "Jewellery",
+      "price": "₹1,900",
+      "description": "Hand-set rose quartz in a brushed gold band, one of twelve made this season.",
+      "image": "",
+      "sold_out": true,
+      "featured": true
+    }
+  ]
+}

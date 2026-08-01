@@ -1,0 +1,135 @@
+# ============================================================
+# DENORA CMS CONFIG
+# Before going live, replace YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+# on the "repo:" line below with your actual GitHub repository.
+# ============================================================
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  branch: main
+
+# Where uploaded photos are stored
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Friendlier commit messages in the repo history
+commit_messages:
+  create: 'Add {{collection}} — {{slug}}'
+  update: 'Update {{collection}} — {{slug}}'
+  delete: 'Remove {{collection}} — {{slug}}'
+  uploadMedia: 'Upload photo — {{path}}'
+  deleteMedia: 'Delete photo — {{path}}'
+
+collections:
+  # ---------- PRODUCTS ----------
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    description: "Add, edit, reorder or remove the pieces shown on your website."
+    files:
+      - name: "product_list"
+        label: "All Products"
+        file: "data/products.json"
+        description: "Click + to add a piece. Drag to reorder. Click the bin icon to remove."
+        fields:
+          - name: "products"
+            label: "Products"
+            label_singular: "Product"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.category}}"
+            fields:
+              - name: "name"
+                label: "Product name"
+                widget: "string"
+                hint: "For example: The Rosalind Dress"
+
+              - name: "category"
+                label: "Category"
+                widget: "select"
+                options: ["Clothing", "Jewellery"]
+                default: "Clothing"
+
+              - name: "price"
+                label: "Price"
+                widget: "string"
+                required: false
+                hint: "Type it exactly as you want it shown, e.g. ₹4,800"
+
+              - name: "description"
+                label: "Short description"
+                widget: "text"
+                required: false
+                hint: "One or two lines about the piece."
+
+              - name: "image"
+                label: "Photo"
+                widget: "image"
+                required: false
+                hint: "Square photos look best. If you leave this empty, a decorative pattern is shown instead."
+
+              - name: "sold_out"
+                label: "Sold out?"
+                widget: "boolean"
+                default: false
+                hint: "Turn this on to show a Sold Out badge and hide the order link."
+
+              - name: "featured"
+                label: "Featured"
+                widget: "boolean"
+                default: true
+                required: false
+
+  # ---------- SITE TEXT & CONTACT ----------
+  - name: "site"
+    label: "Website Text & Contact"
+    files:
+      - name: "site_settings"
+        label: "Website Text & Contact"
+        file: "data/site.json"
+        description: "Your contact details and the wording used across the site."
+        fields:
+          - name: "announcement"
+            label: "Top banner message"
+            widget: "string"
+            required: false
+            hint: "Shown in the dark strip at the very top. Leave empty to hide it."
+
+          - name: "tagline"
+            label: "Homepage tagline"
+            widget: "text"
+            hint: "The sentence under the Denora name on the homepage."
+
+          - name: "whatsapp_number"
+            label: "WhatsApp number"
+            widget: "string"
+            required: false
+            hint: "Include country code, digits only. India example: 919876543210"
+
+          - name: "email"
+            label: "Email address"
+            widget: "string"
+            required: false
+
+          - name: "instagram"
+            label: "Instagram username"
+            widget: "string"
+            required: false
+            hint: "Just the username, without the @ symbol."
+
+          - name: "clothing_blurb"
+            label: "Clothing section text"
+            widget: "text"
+
+          - name: "jewellery_blurb"
+            label: "Jewellery section text"
+            widget: "text"
+
+          - name: "story_heading"
+            label: "Our Story — heading"
+            widget: "string"
+
+          - name: "story_body"
+            label: "Our Story — text"
+            widget: "text"
+            hint: "Leave a blank line between paragraphs."
